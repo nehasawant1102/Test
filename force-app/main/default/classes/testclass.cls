@@ -8,10 +8,13 @@
  * Ver   Date         Author                               Modification
  * 1.0   07-10-2020   Neha   Initial Version
 **/
-trigger test on Account (before insert, before update) {
-    for(Account acc : Trigger.New) {
-        if(acc.Industry != null && (acc.Industry == 'Banking' || acc.Industry == 'Healthcare')){
-         acc.Rating = 'Hot';
-        }
-    }
+@isTest
+private class testclass{
+private static testmethod void accountTriggersTest(){
+Account acc = new Account();
+acc.name = 'NewAccount';
+acc.address = 'USA';
+acc.Industry= 'Banking';
+insert acc;
+}
 }
