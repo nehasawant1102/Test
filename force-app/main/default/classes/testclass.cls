@@ -13,7 +13,6 @@ private class testclass{
 private static testmethod void accountTriggersTest(){
 Account acc = new Account();
 acc.name = 'NewAccount';
-acc.address = 'USA';
 acc.Industry= 'Banking';
 insert acc;
 }
